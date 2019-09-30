@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZ4-0d-rgw">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminder View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ReminderVC" id="BYZ-38-t0r" customClass="ReminderViewController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1N-4F-coZ" userLabel="titleViewHolder" customClass="TitleViewHolder" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-wg-xM9">
+                                        <rect key="frame" x="163.5" y="12.5" width="87" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="H0p-wg-xM9" firstAttribute="centerX" secondItem="e1N-4F-coZ" secondAttribute="centerX" id="1z6-Wy-ecm"/>
+                                    <constraint firstAttribute="height" constant="44" id="BT7-gn-L8C"/>
+                                    <constraint firstItem="H0p-wg-xM9" firstAttribute="centerX" secondItem="e1N-4F-coZ" secondAttribute="centerX" id="MtD-95-aiN"/>
+                                    <constraint firstItem="H0p-wg-xM9" firstAttribute="centerY" secondItem="e1N-4F-coZ" secondAttribute="centerY" id="g84-QO-KBT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="titleLabel" destination="H0p-wg-xM9" id="aSd-A8-7uh"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-tn-aOe" userLabel="tableViewHolder" customClass="TableViewHolder" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8W-ok-6Qg" userLabel="addViewHolder" customClass="AddViewHolder" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="334" y="790" width="60" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="QL1-MQ-mDd">
+                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QL1-MQ-mDd" firstAttribute="height" secondItem="l8W-ok-6Qg" secondAttribute="height" multiplier="0.5" id="7UB-5D-zMF"/>
+                                    <constraint firstItem="QL1-MQ-mDd" firstAttribute="centerY" secondItem="l8W-ok-6Qg" secondAttribute="centerY" id="EP4-J0-nzh"/>
+                                    <constraint firstAttribute="width" constant="60" id="FKN-1O-u74"/>
+                                    <constraint firstItem="QL1-MQ-mDd" firstAttribute="width" secondItem="l8W-ok-6Qg" secondAttribute="width" multiplier="0.5" id="ZzE-u8-fwM"/>
+                                    <constraint firstItem="QL1-MQ-mDd" firstAttribute="centerX" secondItem="l8W-ok-6Qg" secondAttribute="centerX" id="k1F-xn-ggr"/>
+                                    <constraint firstAttribute="height" constant="60" id="pci-cR-aGd"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="M8d-F3-gZe"/>
+                                <connections>
+                                    <outlet property="addImageView" destination="QL1-MQ-mDd" id="4p6-OS-oHV"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l8W-ok-6Qg" secondAttribute="bottom" constant="12" id="PQK-ti-jNQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e1N-4F-coZ" secondAttribute="trailing" id="aL3-HD-8fT"/>
+                            <constraint firstItem="e1N-4F-coZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="grI-Wg-iiK"/>
+                            <constraint firstAttribute="bottom" secondItem="gTA-tn-aOe" secondAttribute="bottom" id="jfl-Eh-MXY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l8W-ok-6Qg" secondAttribute="trailing" constant="20" id="kOY-nn-y8g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTA-tn-aOe" secondAttribute="trailing" id="nHB-wJ-yVm"/>
+                            <constraint firstItem="e1N-4F-coZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="siH-7F-gk8"/>
+                            <constraint firstItem="gTA-tn-aOe" firstAttribute="top" secondItem="e1N-4F-coZ" secondAttribute="bottom" id="vEF-2o-5bi"/>
+                            <constraint firstItem="gTA-tn-aOe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xQE-f0-YQy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mK8-Nx-0hM"/>
+                    <connections>
+                        <outlet property="addViewHolder" destination="l8W-ok-6Qg" id="EgY-mV-mAW"/>
+                        <outlet property="tableViewHolder" destination="gTA-tn-aOe" id="KNZ-Uk-vDq"/>
+                        <outlet property="titleViewHolder" destination="e1N-4F-coZ" id="8eL-hI-pCD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092.753623188406" y="20.758928571428569"/>
+        </scene>
+        <!--Add Reminder View Controller-->
+        <scene sceneID="5xY-73-8LS">
+            <objects>
+                <viewController storyboardIdentifier="AddReminderVC" id="e5I-SA-sBZ" customClass="AddReminderViewController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="clm-fD-OoL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-Xk-udy" userLabel="titleViewHolder" customClass="TitleViewHolder" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80j-2g-40j">
+                                        <rect key="frame" x="163.5" y="12.5" width="87" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20x-ir-tHA">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="GeK-nS-n7E"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="handleDismissView" destination="kzb-Xk-udy" eventType="touchUpInside" id="ZJr-P9-HUp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="80j-2g-40j" firstAttribute="centerX" secondItem="kzb-Xk-udy" secondAttribute="centerX" id="0LD-NI-1NS"/>
+                                    <constraint firstAttribute="height" constant="44" id="8co-rp-zgD"/>
+                                    <constraint firstItem="80j-2g-40j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="20x-ir-tHA" secondAttribute="trailing" constant="12" id="Aro-cR-tm6"/>
+                                    <constraint firstItem="80j-2g-40j" firstAttribute="centerY" secondItem="kzb-Xk-udy" secondAttribute="centerY" id="B5F-u7-WIX"/>
+                                    <constraint firstItem="20x-ir-tHA" firstAttribute="top" secondItem="kzb-Xk-udy" secondAttribute="top" id="Kc8-Yg-R0f"/>
+                                    <constraint firstItem="80j-2g-40j" firstAttribute="centerX" secondItem="kzb-Xk-udy" secondAttribute="centerX" id="LCd-8e-e0h"/>
+                                    <constraint firstItem="20x-ir-tHA" firstAttribute="leading" secondItem="kzb-Xk-udy" secondAttribute="leading" id="Ne3-5r-FcJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="20x-ir-tHA" secondAttribute="bottom" id="YMM-eD-4Oo"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dismissButton" destination="20x-ir-tHA" id="11R-K0-i4J"/>
+                                    <outlet property="titleLabel" destination="80j-2g-40j" id="sXc-oq-LNY"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-Bl-quJ" userLabel="tableViewHolder" customClass="TableViewHolder" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hNv-uI-7Sx" firstAttribute="trailing" secondItem="N4A-Bl-quJ" secondAttribute="trailing" id="Enu-kP-Jqf"/>
+                            <constraint firstItem="kzb-Xk-udy" firstAttribute="leading" secondItem="hNv-uI-7Sx" secondAttribute="leading" id="Nn9-iO-1Ei"/>
+                            <constraint firstItem="N4A-Bl-quJ" firstAttribute="top" secondItem="kzb-Xk-udy" secondAttribute="bottom" id="TVD-Ab-g2H"/>
+                            <constraint firstItem="hNv-uI-7Sx" firstAttribute="trailing" secondItem="kzb-Xk-udy" secondAttribute="trailing" id="ZVv-Gv-Qi5"/>
+                            <constraint firstItem="N4A-Bl-quJ" firstAttribute="leading" secondItem="hNv-uI-7Sx" secondAttribute="leading" id="i9N-g1-KwI"/>
+                            <constraint firstAttribute="bottom" secondItem="N4A-Bl-quJ" secondAttribute="bottom" id="pak-A9-ssQ"/>
+                            <constraint firstItem="kzb-Xk-udy" firstAttribute="top" secondItem="hNv-uI-7Sx" secondAttribute="top" id="tpN-qr-D9m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hNv-uI-7Sx"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewHolder" destination="N4A-Bl-quJ" id="uQg-0D-qdg"/>
+                        <outlet property="titleViewHolder" destination="kzb-Xk-udy" id="VzS-09-sV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ulh-PC-gsN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.072463768116" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1oR-FS-Fw6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fZ4-0d-rgw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u7O-ag-agr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xWP-9h-mEx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJI-iy-qMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182.60869565217394" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add" width="60" height="60"/>
+        <image name="back" width="10" height="16.5"/>
+    </resources>
+</document>
