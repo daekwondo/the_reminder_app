@@ -2,8 +2,8 @@
 //  RemindMeUITests.swift
 //  RemindMeUITests
 //
-//  Created by Santosh Bista on 9/17/19.
-//  Copyright © 2019 Santosh Bista. All rights reserved.
+//  Created by Ishwar Silwal on 9/17/19.
+//  Copyright © 2019 Ishwar Silwal. All rights reserved.
 //
 
 import XCTest

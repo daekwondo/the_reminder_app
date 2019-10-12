@@ -2,8 +2,8 @@
 //  EmptyTaskCell.swift
 //  RemindMe
 //
-//  Created by Santosh Bista on 10/10/19.
-//  Copyright © 2019 Santosh Bista. All rights reserved.
+//  Created by Ishwar Silwal on 10/10/19.
+//  Copyright © 2019 Ishwar Silwal. All rights reserved.
 //
 
 import UIKit

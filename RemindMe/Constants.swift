@@ -2,8 +2,8 @@
 //  Constants.swift
 //  RemindMe
 //
-//  Created by Santosh Bista on 9/17/19.
-//  Copyright © 2019 Santosh Bista. All rights reserved.
+//  Created by Ishwar Silwal on 9/17/19.
+//  Copyright © 2019 Ishwar Silwal. All rights reserved.
 //
 
 import UIKit
@@ -59,6 +59,7 @@ struct Duration {
 struct StoryName {
     static let ReminderVC = "ReminderVC"
     static let AddReminderVC = "AddReminderVC"
+    static let PickerVC = "PickerVC"
 }
 
 struct XibName {
@@ -80,6 +81,17 @@ struct Constants {
     static let AddTask = "Add Task"
     static let EnterReminderTitle = "Enter Reminder Title"
     static let ReminderTitle = "Reminder Title"
+    
+    static let EnterReminderType = "Choose Reminder Category"
+    static let ReminderType = "Reminder Category"
+    
+    static let RepeatReminder = "Repeat Reminder"
+    
+    static let EnterReminderEndDate = "Choose Reminder End Date"
+    static let ReminderEndDate = "Reminder End Date"
+    
+    static let EnterReminderInterval = "Enter Reminder Interval"
+    static let ReminderInterval = "Reminder Interval"
     
     static let RemindMe = "Remind Me"
     static let AddReminder = "Add Reminder"

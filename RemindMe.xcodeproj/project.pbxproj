@@ -43,6 +43,8 @@
 		A4B9CAC42334030D00835105 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9CAC32334030D00835105 /* MasterViewController.swift */; };
 		DECFABD9A4B50D185958C84B /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C8CBF2D1DBE0CBC3F3F5C /* Pods_RemindMe.framework */; };
 		F7017FD2E3C328DF633FEE94 /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D5F561698EE5B92F1CFCA3 /* Pods_RemindMeUITests.framework */; };
+		F79128822350154F00FEFD2E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79128812350154F00FEFD2E /* NotificationManager.swift */; };
+		F791288423501CAB00FEFD2E /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F791288323501CAB00FEFD2E /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		A4B9CAC32334030D00835105 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B3680F1D84BCC281864C7130 /* Pods-RemindMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMeUITests.release.xcconfig"; path = "Target Support Files/Pods-RemindMeUITests/Pods-RemindMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F2721A004CB0376E889C2C3D /* Pods-RemindMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMeTests.release.xcconfig"; path = "Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F79128812350154F00FEFD2E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = RemindMe/Utility/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
+		F791288323501CAB00FEFD2E /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,7 @@
 				A4B9CAC32334030D00835105 /* MasterViewController.swift */,
 				A4026ACD23319C46003DD66E /* ReminderViewController.swift */,
 				A4026ACF23319CC2003DD66E /* AddReminderViewController.swift */,
+				F791288323501CAB00FEFD2E /* PickerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			children = (
 				A4026ABF2331928C003DD66E /* Extensions.swift */,
 				A49E34E223341289008BD778 /* DataManager.swift */,
+				F79128812350154F00FEFD2E /* NotificationManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 			files = (
 				A4026AD023319CC2003DD66E /* AddReminderViewController.swift in Sources */,
 				A49E34E323341289008BD778 /* DataManager.swift in Sources */,
+				F79128822350154F00FEFD2E /* NotificationManager.swift in Sources */,
 				A49E34EF233414D7008BD778 /* TaskListView.swift in Sources */,
 				A49E34F123341584008BD778 /* AddTaskView.swift in Sources */,
 				A4026AB323318707003DD66E /* Constants.swift in Sources */,
@@ -572,6 +579,7 @@
 				A47D5A9E234FBC3E00B2AC4F /* EmptyTaskCell.swift in Sources */,
 				A4026ABB2331917E003DD66E /* ListView.swift in Sources */,
 				A4026AB1233186ED003DD66E /* Tasks.swift in Sources */,
+				F791288423501CAB00FEFD2E /* PickerViewController.swift in Sources */,
 				A492340923500944002264F9 /* TextLabelCell.swift in Sources */,
 				A4026AB92331916F003DD66E /* TitleView.swift in Sources */,
 				A4026ACE23319C46003DD66E /* ReminderViewController.swift in Sources */,
@@ -762,7 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.majjakotech.RemindMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silwal.ishwal.RemindMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -781,7 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.majjakotech.RemindMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silwal.ishwal.RemindMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

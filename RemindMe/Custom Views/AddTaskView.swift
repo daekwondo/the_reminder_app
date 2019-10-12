@@ -2,8 +2,8 @@
 //  AddTaskView.swift
 //  RemindMe
 //
-//  Created by Santosh Bista on 9/19/19.
-//  Copyright © 2019 Santosh Bista. All rights reserved.
+//  Created by Ishwar Silwal on 9/19/19.
+//  Copyright © 2019 Ishwar Silwal. All rights reserved.
 //
 
 import UIKit
@@ -95,9 +95,33 @@ extension AddTaskView: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func configureCell(atIndex indexPath:IndexPath) -> TextLabelCell {
+        let index = indexPath.row
+        
         let textLabelCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.TextLabelCell, for: indexPath) as! TextLabelCell
-        textLabelCell.titleLabel.text = Constants.ReminderTitle
-        textLabelCell.detailLabel.text = Constants.EnterReminderTitle
+        
+        if index == CellType.category.rawValue {
+            textLabelCell.titleLabel.text = Constants.ReminderType
+            textLabelCell.detailLabel.text = Constants.EnterReminderType
+        }
+        else if index == CellType.repeats.rawValue {
+            textLabelCell.titleLabel.text = Constants.RepeatReminder
+            if repeats {
+                textLabelCell.detailLabel.text = "YES"
+            }
+            else {
+                textLabelCell.detailLabel.text = "NO"
+            }
+        }
+        else if index == CellType.endDate.rawValue {
+            textLabelCell.titleLabel.text = Constants.ReminderEndDate
+            textLabelCell.detailLabel.text = Constants.EnterReminderEndDate
+        }
+        else {
+            textLabelCell.titleLabel.text = Constants.ReminderInterval
+            textLabelCell.detailLabel.text = Constants.EnterReminderInterval
+        }
+        
+        
         return textLabelCell
     }
 }
