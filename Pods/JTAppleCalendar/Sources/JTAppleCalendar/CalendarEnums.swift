@@ -118,6 +118,11 @@ public enum SelectionRangePosition: Int {
     case left = 1, middle, right, full, none
 }
 
+/// Between month segments, the range selection can either be visually disconnected or connected
+public enum RangeSelectionMode {
+  case segmented, continuous
+}
+
 /// Signifies whether or not a selection was done programatically or by the user
 public enum SelectionType: String {
     /// Selection type

@@ -1,8 +1,8 @@
 PODS:
   - AKSideMenu (1.4.4)
   - Hue (5.0.0)
-  - IQKeyboardManagerSwift (6.4.1)
-  - JTAppleCalendar (8.0.0)
+  - IQKeyboardManagerSwift (6.5.1)
+  - JTAppleCalendar (8.0.2)
   - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - Toast-Swift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AKSideMenu
     - Hue
     - IQKeyboardManagerSwift
@@ -23,10 +23,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AKSideMenu: 74bbb4936c2097aa9295decbda255f007eaae05b
   Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
-  IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
-  JTAppleCalendar: 76ccdc5a8b236166293e50b190c5f2722c30cdcd
+  IQKeyboardManagerSwift: 9ac7524fad9f9fe9a3b98c927e7772471ca546d2
+  JTAppleCalendar: bb3dd3752e2bcc85cb798ab763fbdd6e142715fc
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
 PODFILE CHECKSUM: 8df659a752d956711054e84db88e87a9b6962e09
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.3
