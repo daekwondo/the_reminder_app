@@ -23,6 +23,8 @@ class AddTaskView: ListView {
     var repeats:Bool = false;
     var endDate:Date = Date();
     var interval:TimeInterval = 0;
+    
+    var showPicker:((_ cellType:CellType) -> Void)?
 
     override func awakeFromNib() {
         let identifiers = [CellIdentifier.TextFieldCell, CellIdentifier.TextLabelCell]
@@ -78,6 +80,21 @@ extension AddTaskView: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        
+        if index == CellType.name.rawValue {
+            return
+        }
+        
+        let cellType = CellType.init(rawValue: index)
+        if let handler = showPicker, let type = cellType {
+            OperationQueue.main.addOperation {
+                handler(type)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -120,7 +137,6 @@ extension AddTaskView: UITableViewDataSource, UITableViewDelegate {
             textLabelCell.titleLabel.text = Constants.ReminderInterval
             textLabelCell.detailLabel.text = Constants.EnterReminderInterval
         }
-        
         
         return textLabelCell
     }

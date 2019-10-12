@@ -14,7 +14,6 @@ class AddReminderViewController: MasterViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
     
@@ -24,5 +23,16 @@ class AddReminderViewController: MasterViewController {
         titleViewHolder.dismissView = {
             self.navigationController?.popViewController(animated: true);
         }
+        
+        addTaskView.showPicker = { type in
+            self.showPickerView(forType: type)
+        }
+    }
+    
+    private func showPickerView(forType type:CellType) {
+        let pickerVC = loadStory(StoryName.PickerVC) as! PickerViewController
+        pickerVC.pickerType = type
+        modalPresentationStyle = .overCurrentContext
+        present(pickerVC, animated: true, completion: nil)
     }
 }

@@ -96,6 +96,9 @@ struct Constants {
     static let RemindMe = "Remind Me"
     static let AddReminder = "Add Reminder"
     static let EmptyString = ""
+    
+    static let Done = "DONE"
+    static let Cancel = "CANCEL"
 }
 
 

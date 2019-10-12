@@ -222,56 +222,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxZ-a8-dmB">
+                                <rect key="frame" x="0.0" y="364" width="414" height="532"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HU0-aT-Zoc">
                                 <rect key="frame" x="0.0" y="430" width="414" height="432"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="B92-wz-f1Q">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="B92-wz-f1Q">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
                                     </datePicker>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-I7-4tz">
                                         <rect key="frame" x="0.0" y="216" width="414" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="TiJ-hN-ASp" id="gNl-db-8dh"/>
+                                            <outlet property="delegate" destination="TiJ-hN-ASp" id="5Mk-PT-iLN"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2t-3e-5yb">
-                                <rect key="frame" x="0.0" y="386" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="364" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeB-VX-l20">
-                                        <rect key="frame" x="12" y="0.0" width="59" height="44"/>
+                                        <rect key="frame" x="12" y="0.0" width="59" height="54"/>
                                         <state key="normal" title="CANCEL"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="TiJ-hN-ASp" eventType="touchUpInside" id="r1b-T7-egZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJd-Xz-Qtm">
-                                        <rect key="frame" x="360" y="0.0" width="42" height="44"/>
+                                        <rect key="frame" x="360" y="0.0" width="42" height="54"/>
                                         <state key="normal" title="DONE"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="TiJ-hN-ASp" eventType="touchUpInside" id="tUe-ss-0ls"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eeB-VX-l20" firstAttribute="leading" secondItem="h2t-3e-5yb" secondAttribute="leading" constant="12" id="3TK-37-oQk"/>
                                     <constraint firstItem="TJd-Xz-Qtm" firstAttribute="top" secondItem="h2t-3e-5yb" secondAttribute="top" id="5bj-eE-LxC"/>
                                     <constraint firstAttribute="bottom" secondItem="TJd-Xz-Qtm" secondAttribute="bottom" id="5ns-3o-sT3"/>
                                     <constraint firstItem="eeB-VX-l20" firstAttribute="top" secondItem="h2t-3e-5yb" secondAttribute="top" id="9W3-Si-vp8"/>
-                                    <constraint firstAttribute="height" constant="44" id="DNE-1W-6Wj"/>
+                                    <constraint firstAttribute="height" constant="54" id="DNE-1W-6Wj"/>
                                     <constraint firstAttribute="trailing" secondItem="TJd-Xz-Qtm" secondAttribute="trailing" constant="12" id="NX1-Cs-1v8"/>
                                     <constraint firstAttribute="bottom" secondItem="eeB-VX-l20" secondAttribute="bottom" id="a5X-pf-niY"/>
+                                    <constraint firstItem="TJd-Xz-Qtm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eeB-VX-l20" secondAttribute="trailing" constant="12" id="d0T-UQ-ZQ2"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="h2t-3e-5yb" firstAttribute="top" secondItem="jxZ-a8-dmB" secondAttribute="top" id="2jZ-eH-wha"/>
+                            <constraint firstItem="HU0-aT-Zoc" firstAttribute="trailing" secondItem="jxZ-a8-dmB" secondAttribute="trailing" id="6ZT-Jl-yeN"/>
+                            <constraint firstItem="HU0-aT-Zoc" firstAttribute="leading" secondItem="jxZ-a8-dmB" secondAttribute="leading" id="So9-LP-cbX"/>
                             <constraint firstItem="h2t-3e-5yb" firstAttribute="leading" secondItem="7qJ-yX-PfS" secondAttribute="leading" id="Upq-9v-odM"/>
+                            <constraint firstAttribute="bottom" secondItem="jxZ-a8-dmB" secondAttribute="bottom" id="X19-yB-08k"/>
                             <constraint firstItem="7qJ-yX-PfS" firstAttribute="trailing" secondItem="h2t-3e-5yb" secondAttribute="trailing" id="XYq-de-5qY"/>
                             <constraint firstItem="7qJ-yX-PfS" firstAttribute="bottom" secondItem="HU0-aT-Zoc" secondAttribute="bottom" id="cXx-f6-FU3"/>
-                            <constraint firstItem="HU0-aT-Zoc" firstAttribute="top" secondItem="h2t-3e-5yb" secondAttribute="bottom" id="iaC-5i-vsO"/>
+                            <constraint firstItem="HU0-aT-Zoc" firstAttribute="top" secondItem="h2t-3e-5yb" secondAttribute="bottom" constant="12" id="iaC-5i-vsO"/>
                             <constraint firstItem="HU0-aT-Zoc" firstAttribute="leading" secondItem="7qJ-yX-PfS" secondAttribute="leading" id="j2e-cb-Oz8"/>
                             <constraint firstItem="7qJ-yX-PfS" firstAttribute="trailing" secondItem="HU0-aT-Zoc" secondAttribute="trailing" id="ulB-AI-Gbf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7qJ-yX-PfS"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonHolder" destination="h2t-3e-5yb" id="TvG-WS-qFl"/>
+                        <outlet property="cancelButton" destination="eeB-VX-l20" id="v24-ZG-Ty4"/>
+                        <outlet property="datePicker" destination="B92-wz-f1Q" id="TfT-4F-RfQ"/>
+                        <outlet property="doneButton" destination="TJd-Xz-Qtm" id="rXA-WF-vbc"/>
+                        <outlet property="picker" destination="jlN-I7-4tz" id="1kQ-B6-5yK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bm9-Uz-uQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093" y="775"/>
+            <point key="canvasLocation" x="1092.753623188406" y="774.77678571428567"/>
         </scene>
     </scenes>
     <resources>
