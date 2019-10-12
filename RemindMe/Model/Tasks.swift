@@ -8,11 +8,12 @@
 
 import UIKit
 
-enum TaskType: Int {
-    case general = 1
-    case birthday = 2
-    case health = 3
-    case anniversay = 4
+enum TaskType: String {
+    case general = "general"
+    case birthday = "birthday"
+    case health = "health"
+    case anniversay = "anniversay"
+    case unknown = "unknown"
 }
 
 class Tasks: NSObject {
@@ -22,6 +23,7 @@ class Tasks: NSObject {
     let category:TaskType
     let repeats:Bool
     let interval:TimeInterval
+    let taskId:String?
     
     init(name:String, endDate:Date, category:TaskType = .general, repeats:Bool = false, interval:TimeInterval) {
         
@@ -30,6 +32,7 @@ class Tasks: NSObject {
         self.category = category
         self.repeats = repeats
         self.interval = interval
+        self.taskId = nil
         
         super.init();
     }

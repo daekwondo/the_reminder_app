@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZ4-0d-rgw">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZ4-0d-rgw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1N-4F-coZ" userLabel="titleViewHolder" customClass="TitleViewHolder" customModule="RemindMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1N-4F-coZ" userLabel="titleViewHolder" customClass="TitleView" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-wg-xM9">
                                         <rect key="frame" x="163.5" y="12.5" width="87" height="19.5"/>
@@ -39,11 +37,30 @@
                                     <outlet property="titleLabel" destination="H0p-wg-xM9" id="aSd-A8-7uh"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-tn-aOe" userLabel="tableViewHolder" customClass="TableViewHolder" customModule="RemindMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-tn-aOe" userLabel="tableViewHolder" customClass="TaskListView" customModule="RemindMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3YO-si-Ejq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gTA-tn-aOe" id="E5S-dL-VLI"/>
+                                            <outlet property="delegate" destination="gTA-tn-aOe" id="g5u-pZ-MQQ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3YO-si-Ejq" secondAttribute="bottom" id="C4d-4l-vYp"/>
+                                    <constraint firstItem="3YO-si-Ejq" firstAttribute="leading" secondItem="gTA-tn-aOe" secondAttribute="leading" id="Qp4-Vw-KAH"/>
+                                    <constraint firstItem="3YO-si-Ejq" firstAttribute="top" secondItem="gTA-tn-aOe" secondAttribute="top" id="YhA-y9-Eqk"/>
+                                    <constraint firstAttribute="trailing" secondItem="3YO-si-Ejq" secondAttribute="trailing" id="zzg-TJ-Vrx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="tableView" destination="3YO-si-Ejq" id="Cm7-8B-EeV"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8W-ok-6Qg" userLabel="addViewHolder" customClass="AddViewHolder" customModule="RemindMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8W-ok-6Qg" userLabel="addViewHolder" customClass="AddView" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="334" y="790" width="60" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="QL1-MQ-mDd">
@@ -82,7 +99,7 @@
                     <navigationItem key="navigationItem" id="mK8-Nx-0hM"/>
                     <connections>
                         <outlet property="addViewHolder" destination="l8W-ok-6Qg" id="EgY-mV-mAW"/>
-                        <outlet property="tableViewHolder" destination="gTA-tn-aOe" id="KNZ-Uk-vDq"/>
+                        <outlet property="taskListView" destination="gTA-tn-aOe" id="z9q-kY-3EE"/>
                         <outlet property="titleViewHolder" destination="e1N-4F-coZ" id="8eL-hI-pCD"/>
                     </connections>
                 </viewController>
@@ -98,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-Xk-udy" userLabel="titleViewHolder" customClass="TitleViewHolder" customModule="RemindMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-Xk-udy" userLabel="titleViewHolder" customClass="TitleView" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80j-2g-40j">
@@ -134,9 +151,28 @@
                                     <outlet property="titleLabel" destination="80j-2g-40j" id="sXc-oq-LNY"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-Bl-quJ" userLabel="tableViewHolder" customClass="TableViewHolder" customModule="RemindMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-Bl-quJ" userLabel="tableViewHolder" customClass="AddTaskView" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mls-9z-CHX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="N4A-Bl-quJ" id="dri-1b-yb0"/>
+                                            <outlet property="delegate" destination="N4A-Bl-quJ" id="VHz-ki-Ye9"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mls-9z-CHX" firstAttribute="leading" secondItem="N4A-Bl-quJ" secondAttribute="leading" id="O5E-JA-3xH"/>
+                                    <constraint firstAttribute="bottom" secondItem="mls-9z-CHX" secondAttribute="bottom" id="Pd9-XF-HBL"/>
+                                    <constraint firstAttribute="trailing" secondItem="mls-9z-CHX" secondAttribute="trailing" id="nOo-a5-f0E"/>
+                                    <constraint firstItem="mls-9z-CHX" firstAttribute="top" secondItem="N4A-Bl-quJ" secondAttribute="top" id="nvI-Ql-bg3"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="tableView" destination="mls-9z-CHX" id="5K6-eh-CF8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,7 +188,7 @@
                         <viewLayoutGuide key="safeArea" id="hNv-uI-7Sx"/>
                     </view>
                     <connections>
-                        <outlet property="tableViewHolder" destination="N4A-Bl-quJ" id="uQg-0D-qdg"/>
+                        <outlet property="addTaskView" destination="N4A-Bl-quJ" id="hx0-Sf-sy3"/>
                         <outlet property="titleViewHolder" destination="kzb-Xk-udy" id="VzS-09-sV9"/>
                     </connections>
                 </viewController>
@@ -163,10 +199,10 @@
         <!--Navigation Controller-->
         <scene sceneID="1oR-FS-Fw6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fZ4-0d-rgw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fZ4-0d-rgw" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u7O-ag-agr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleViewHolder: UIView {
+class TitleView: UIView {
 
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var dismissButton:UIButton?
@@ -18,7 +18,8 @@ class TitleViewHolder: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureButton()
-        titleLabel.configureWith(fontName: FontName.OpenSansBold, fontSize: FontSize.Eighteen, fontColor: FontColor.black)
+        backgroundColor = FontColor.clear
+        titleLabel.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Eighteen, fontColor: FontColor.white)
     }
     
     private func configureButton() {
@@ -26,7 +27,7 @@ class TitleViewHolder: UIView {
             return
         }
         
-        button.configureWith(imageName: ImageName.Back, tintColor: FontColor.black, backgroundColor: FontColor.clear, cornerRadius: RadiusSize.Zero);
+        button.configureWith(imageName: ImageName.Back, tintColor: FontColor.white, backgroundColor: FontColor.clear, cornerRadius: RadiusSize.Zero);
     }
     
     @IBAction func handleDismissView() {

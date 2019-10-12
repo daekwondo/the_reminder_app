@@ -10,16 +10,42 @@ import UIKit
 
 class ReminderViewController: MasterViewController {
     
-    @IBOutlet weak var addViewHolder:AddViewHolder!
+    private var dataArray = [Tasks]()
+    
+    @IBOutlet weak var addViewHolder:AddView!
+    @IBOutlet weak var taskListView:TaskListView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+        addViewHolder.alpha = 0;
+        
         configure()
+        handleAddViewVisible()
+        
+        DataManager.loadTasks(forType: .unknown) { (tasks) in
+            self.dataArray = tasks
+            self.taskListView.showTaskList(list: tasks)
+        }
+    }
+    
+    private func handleAddViewVisible() {
+        var alpha:CGFloat = 1
+        if self.dataArray.count == 0 {
+            alpha = 0
+        }
+        
+        UIView.animate(withDuration:Duration.Thirty) {
+            self.addViewHolder.alpha = alpha
+        }
     }
     
     private func configure() {
         addViewHolder.handleAddTask = {
+            self.showAddReminderView()
+        }
+        
+        taskListView.addTask = {
             self.showAddReminderView()
         }
     }

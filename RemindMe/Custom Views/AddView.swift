@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewHolder: UIView {
+class AddView: UIView {
     
     @IBOutlet weak var addImageView:UIImageView!
 

@@ -31,6 +31,12 @@ extension UIViewController {
 
 extension UIView {
     
+    func disableDarkMode() {
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+    
     func addTapGesture() -> UITapGestureRecognizer {
         let tapGesture = UITapGestureRecognizer.init()
         tapGesture.numberOfTapsRequired = 1
@@ -163,5 +169,13 @@ extension String {
     
     func capitalizedFirstLetter() -> String {
         return prefix(1).uppercased() + self.dropFirst()
+    }
+}
+
+extension UITextField {
+    func configureWith(fontName:String, fontSize:CGFloat, fontColor:UIColor) {
+        let font = UIFont(name: fontName, size: fontSize)
+        self.font = font
+        textColor = fontColor
     }
 }

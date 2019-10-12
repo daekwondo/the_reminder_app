@@ -17,9 +17,9 @@
 		A4026AA32331862E003DD66E /* RemindMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AA22331862E003DD66E /* RemindMeUITests.swift */; };
 		A4026AB1233186ED003DD66E /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB0233186ED003DD66E /* Tasks.swift */; };
 		A4026AB323318707003DD66E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB223318707003DD66E /* Constants.swift */; };
-		A4026AB723319161003DD66E /* AddViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB623319161003DD66E /* AddViewHolder.swift */; };
-		A4026AB92331916F003DD66E /* TitleViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB82331916F003DD66E /* TitleViewHolder.swift */; };
-		A4026ABB2331917E003DD66E /* TableViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026ABA2331917E003DD66E /* TableViewHolder.swift */; };
+		A4026AB723319161003DD66E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB623319161003DD66E /* AddView.swift */; };
+		A4026AB92331916F003DD66E /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026AB82331916F003DD66E /* TitleView.swift */; };
+		A4026ABB2331917E003DD66E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026ABA2331917E003DD66E /* ListView.swift */; };
 		A4026AC02331928C003DD66E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026ABF2331928C003DD66E /* Extensions.swift */; };
 		A4026AC623319602003DD66E /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4026AC223319602003DD66E /* OpenSans-SemiBold.ttf */; };
 		A4026AC723319602003DD66E /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4026AC323319602003DD66E /* OpenSans-Regular.ttf */; };
@@ -27,6 +27,19 @@
 		A4026AC923319602003DD66E /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4026AC523319602003DD66E /* OpenSans-Bold.ttf */; };
 		A4026ACE23319C46003DD66E /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026ACD23319C46003DD66E /* ReminderViewController.swift */; };
 		A4026AD023319CC2003DD66E /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4026ACF23319CC2003DD66E /* AddReminderViewController.swift */; };
+		A47D5A9E234FBC3E00B2AC4F /* EmptyTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D5A9C234FBC3E00B2AC4F /* EmptyTaskCell.swift */; };
+		A47D5A9F234FBC3E00B2AC4F /* EmptyTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47D5A9D234FBC3E00B2AC4F /* EmptyTaskCell.xib */; };
+		A492340923500944002264F9 /* TextLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492340723500944002264F9 /* TextLabelCell.swift */; };
+		A492340A23500944002264F9 /* TextLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A492340823500944002264F9 /* TextLabelCell.xib */; };
+		A49E34E323341289008BD778 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34E223341289008BD778 /* DataManager.swift */; };
+		A49E34E6233412BF008BD778 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34E4233412BF008BD778 /* TaskCell.swift */; };
+		A49E34E7233412BF008BD778 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49E34E5233412BF008BD778 /* TaskCell.xib */; };
+		A49E34EB233413AD008BD778 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34EA233413AD008BD778 /* CategorySection.swift */; };
+		A49E34ED233413BC008BD778 /* CategorySection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49E34EC233413BC008BD778 /* CategorySection.xib */; };
+		A49E34EF233414D7008BD778 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34EE233414D7008BD778 /* TaskListView.swift */; };
+		A49E34F123341584008BD778 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34F023341584008BD778 /* AddTaskView.swift */; };
+		A49E34F823341887008BD778 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E34F623341887008BD778 /* TextFieldCell.swift */; };
+		A49E34F923341887008BD778 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49E34F723341887008BD778 /* TextFieldCell.xib */; };
 		A4B9CAC42334030D00835105 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9CAC32334030D00835105 /* MasterViewController.swift */; };
 		DECFABD9A4B50D185958C84B /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C8CBF2D1DBE0CBC3F3F5C /* Pods_RemindMe.framework */; };
 		F7017FD2E3C328DF633FEE94 /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D5F561698EE5B92F1CFCA3 /* Pods_RemindMeUITests.framework */; };
@@ -72,9 +85,9 @@
 		A4026AA42331862E003DD66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4026AB0233186ED003DD66E /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		A4026AB223318707003DD66E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A4026AB623319161003DD66E /* AddViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewHolder.swift; sourceTree = "<group>"; };
-		A4026AB82331916F003DD66E /* TitleViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewHolder.swift; sourceTree = "<group>"; };
-		A4026ABA2331917E003DD66E /* TableViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHolder.swift; sourceTree = "<group>"; };
+		A4026AB623319161003DD66E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		A4026AB82331916F003DD66E /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		A4026ABA2331917E003DD66E /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		A4026ABF2331928C003DD66E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A4026AC223319602003DD66E /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		A4026AC323319602003DD66E /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -82,6 +95,19 @@
 		A4026AC523319602003DD66E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		A4026ACD23319C46003DD66E /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		A4026ACF23319CC2003DD66E /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		A47D5A9C234FBC3E00B2AC4F /* EmptyTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskCell.swift; sourceTree = "<group>"; };
+		A47D5A9D234FBC3E00B2AC4F /* EmptyTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTaskCell.xib; sourceTree = "<group>"; };
+		A492340723500944002264F9 /* TextLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabelCell.swift; sourceTree = "<group>"; };
+		A492340823500944002264F9 /* TextLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextLabelCell.xib; sourceTree = "<group>"; };
+		A49E34E223341289008BD778 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A49E34E4233412BF008BD778 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		A49E34E5233412BF008BD778 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		A49E34EA233413AD008BD778 /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
+		A49E34EC233413BC008BD778 /* CategorySection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySection.xib; sourceTree = "<group>"; };
+		A49E34EE233414D7008BD778 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		A49E34F023341584008BD778 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		A49E34F623341887008BD778 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		A49E34F723341887008BD778 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		A4B9CAC32334030D00835105 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B3680F1D84BCC281864C7130 /* Pods-RemindMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMeUITests.release.xcconfig"; path = "Target Support Files/Pods-RemindMeUITests/Pods-RemindMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F2721A004CB0376E889C2C3D /* Pods-RemindMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMeTests.release.xcconfig"; path = "Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,11 +191,12 @@
 			children = (
 				A4026A7F2331862D003DD66E /* AppDelegate.swift */,
 				A4026AB223318707003DD66E /* Constants.swift */,
-				A4026ABF2331928C003DD66E /* Extensions.swift */,
-				A4026ABE2331925D003DD66E /* Model */,
+				A4026A832331862D003DD66E /* Main.storyboard */,
 				A4026ABD23319250003DD66E /* View Controllers */,
 				A4026ABC23319184003DD66E /* Custom Views */,
-				A4026A832331862D003DD66E /* Main.storyboard */,
+				A49E34E8233412C7008BD778 /* Custom Cells */,
+				A4B9CAC82334123700835105 /* Utility */,
+				A4026ABE2331925D003DD66E /* Model */,
 				A4026A892331862E003DD66E /* Assets.xcassets */,
 				A4026ACB2331969C003DD66E /* Supporting Files */,
 			);
@@ -197,9 +224,13 @@
 		A4026ABC23319184003DD66E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				A4026AB623319161003DD66E /* AddViewHolder.swift */,
-				A4026AB82331916F003DD66E /* TitleViewHolder.swift */,
-				A4026ABA2331917E003DD66E /* TableViewHolder.swift */,
+				A4026AB623319161003DD66E /* AddView.swift */,
+				A4026AB82331916F003DD66E /* TitleView.swift */,
+				A4026ABA2331917E003DD66E /* ListView.swift */,
+				A49E34EE233414D7008BD778 /* TaskListView.swift */,
+				A49E34F023341584008BD778 /* AddTaskView.swift */,
+				A49E34EA233413AD008BD778 /* CategorySection.swift */,
+				A49E34EC233413BC008BD778 /* CategorySection.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -242,6 +273,62 @@
 				A4026AC223319602003DD66E /* OpenSans-SemiBold.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		A47D5AA0234FBC4C00B2AC4F /* Empty Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A47D5A9C234FBC3E00B2AC4F /* EmptyTaskCell.swift */,
+				A47D5A9D234FBC3E00B2AC4F /* EmptyTaskCell.xib */,
+			);
+			path = "Empty Cell";
+			sourceTree = "<group>";
+		};
+		A492340B23500950002264F9 /* Text Label Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A492340723500944002264F9 /* TextLabelCell.swift */,
+				A492340823500944002264F9 /* TextLabelCell.xib */,
+			);
+			path = "Text Label Cell";
+			sourceTree = "<group>";
+		};
+		A49E34E8233412C7008BD778 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A49E34E9233412D4008BD778 /* Task Cell */,
+				A49E34FA2334188C008BD778 /* Text View Cell */,
+				A47D5AA0234FBC4C00B2AC4F /* Empty Cell */,
+				A492340B23500950002264F9 /* Text Label Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		A49E34E9233412D4008BD778 /* Task Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A49E34E4233412BF008BD778 /* TaskCell.swift */,
+				A49E34E5233412BF008BD778 /* TaskCell.xib */,
+			);
+			path = "Task Cell";
+			sourceTree = "<group>";
+		};
+		A49E34FA2334188C008BD778 /* Text View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A49E34F623341887008BD778 /* TextFieldCell.swift */,
+				A49E34F723341887008BD778 /* TextFieldCell.xib */,
+			);
+			path = "Text View Cell";
+			sourceTree = "<group>";
+		};
+		A4B9CAC82334123700835105 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A4026ABF2331928C003DD66E /* Extensions.swift */,
+				A49E34E223341289008BD778 /* DataManager.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,13 +439,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49E34E7233412BF008BD778 /* TaskCell.xib in Resources */,
+				A49E34F923341887008BD778 /* TextFieldCell.xib in Resources */,
+				A49E34ED233413BC008BD778 /* CategorySection.xib in Resources */,
 				A4026AC823319602003DD66E /* OpenSans-Light.ttf in Resources */,
 				A4026AC923319602003DD66E /* OpenSans-Bold.ttf in Resources */,
 				A4026AC723319602003DD66E /* OpenSans-Regular.ttf in Resources */,
 				A4026AC623319602003DD66E /* OpenSans-SemiBold.ttf in Resources */,
 				A4026A8D2331862E003DD66E /* LaunchScreen.storyboard in Resources */,
+				A47D5A9F234FBC3E00B2AC4F /* EmptyTaskCell.xib in Resources */,
 				A4026A8A2331862E003DD66E /* Assets.xcassets in Resources */,
 				A4026A852331862D003DD66E /* Main.storyboard in Resources */,
+				A492340A23500944002264F9 /* TextLabelCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,15 +562,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4026AD023319CC2003DD66E /* AddReminderViewController.swift in Sources */,
+				A49E34E323341289008BD778 /* DataManager.swift in Sources */,
+				A49E34EF233414D7008BD778 /* TaskListView.swift in Sources */,
+				A49E34F123341584008BD778 /* AddTaskView.swift in Sources */,
 				A4026AB323318707003DD66E /* Constants.swift in Sources */,
 				A4B9CAC42334030D00835105 /* MasterViewController.swift in Sources */,
 				A4026AC02331928C003DD66E /* Extensions.swift in Sources */,
-				A4026ABB2331917E003DD66E /* TableViewHolder.swift in Sources */,
+				A49E34EB233413AD008BD778 /* CategorySection.swift in Sources */,
+				A47D5A9E234FBC3E00B2AC4F /* EmptyTaskCell.swift in Sources */,
+				A4026ABB2331917E003DD66E /* ListView.swift in Sources */,
 				A4026AB1233186ED003DD66E /* Tasks.swift in Sources */,
-				A4026AB92331916F003DD66E /* TitleViewHolder.swift in Sources */,
+				A492340923500944002264F9 /* TextLabelCell.swift in Sources */,
+				A4026AB92331916F003DD66E /* TitleView.swift in Sources */,
 				A4026ACE23319C46003DD66E /* ReminderViewController.swift in Sources */,
 				A4026A802331862D003DD66E /* AppDelegate.swift in Sources */,
-				A4026AB723319161003DD66E /* AddViewHolder.swift in Sources */,
+				A4026AB723319161003DD66E /* AddView.swift in Sources */,
+				A49E34E6233412BF008BD778 /* TaskCell.swift in Sources */,
+				A49E34F823341887008BD778 /* TextFieldCell.swift in Sources */,
 				A4026A882331862D003DD66E /* RemindMe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

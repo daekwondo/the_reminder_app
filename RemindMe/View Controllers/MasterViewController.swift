@@ -10,14 +10,14 @@ import UIKit
 
 class MasterViewController: UIViewController {
     
-    @IBOutlet weak var titleViewHolder:TitleViewHolder!
-    @IBOutlet weak var tableViewHolder:TableViewHolder!
+    @IBOutlet weak var titleViewHolder:TitleView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.disableDarkMode()
+        view.backgroundColor = FontColor.backGroundColor
     }
     
-
     /*
     // MARK: - Navigation
 

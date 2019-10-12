@@ -41,15 +41,49 @@ struct FontColor {
     static let green            = UIColor(hex: "#A5CF4E")
     static let backGroundColor  = UIColor(hex: "#3B5998")
     static let lightGrayColor   = UIColor(hex: "#D3D3D3")
+    static let grayColor        = UIColor.gray
     static let black            = UIColor(hex: "#000000")
-}
-
-struct StoryName {
-    static let ReminderVC = "ReminderVC"
-    static let AddReminderVC = "AddReminderVC"
 }
 
 struct ImageName {
     static let Add = "add"
     static let Back = "back"
 }
+
+struct Duration {
+    static let Thirty:TimeInterval = 30
+    static let Sixty:TimeInterval = 60
+}
+
+
+struct StoryName {
+    static let ReminderVC = "ReminderVC"
+    static let AddReminderVC = "AddReminderVC"
+}
+
+struct XibName {
+    static let CategorySection = "CategorySection"
+}
+
+struct CellIdentifier {
+    static let TaskCell = "TaskCell"
+    static let EmptyTaskCell = "EmptyTaskCell"
+    static let TextFieldCell = "TextFieldCell"
+    static let TextLabelCell = "TextLabelCell"
+}
+
+struct Entity {
+    static let Reminders = "Reminders"
+}
+
+struct Constants {
+    static let AddTask = "Add Task"
+    static let EnterReminderTitle = "Enter Reminder Title"
+    static let ReminderTitle = "Reminder Title"
+    
+    static let RemindMe = "Remind Me"
+    static let AddReminder = "Add Reminder"
+    static let EmptyString = ""
+}
+
+
