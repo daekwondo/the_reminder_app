@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZ4-0d-rgw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZ4-0d-rgw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,15 +37,15 @@
                                     <outlet property="titleLabel" destination="H0p-wg-xM9" id="aSd-A8-7uh"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-tn-aOe" userLabel="tableViewHolder" customClass="TaskListView" customModule="RemindMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-tn-aOe" userLabel="tableViewHolder" customClass="ViewHolder" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3YO-si-Ejq">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="gTA-tn-aOe" id="E5S-dL-VLI"/>
-                                            <outlet property="delegate" destination="gTA-tn-aOe" id="g5u-pZ-MQQ"/>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="UIf-rl-Fpb"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="ZVf-el-IdC"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -56,9 +56,6 @@
                                     <constraint firstItem="3YO-si-Ejq" firstAttribute="top" secondItem="gTA-tn-aOe" secondAttribute="top" id="YhA-y9-Eqk"/>
                                     <constraint firstAttribute="trailing" secondItem="3YO-si-Ejq" secondAttribute="trailing" id="zzg-TJ-Vrx"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="tableView" destination="3YO-si-Ejq" id="Cm7-8B-EeV"/>
-                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8W-ok-6Qg" userLabel="addViewHolder" customClass="AddView" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="334" y="790" width="60" height="60"/>
@@ -99,8 +96,9 @@
                     <navigationItem key="navigationItem" id="mK8-Nx-0hM"/>
                     <connections>
                         <outlet property="addViewHolder" destination="l8W-ok-6Qg" id="EgY-mV-mAW"/>
-                        <outlet property="taskListView" destination="gTA-tn-aOe" id="z9q-kY-3EE"/>
+                        <outlet property="tableView" destination="3YO-si-Ejq" id="u2x-Ag-6Ux"/>
                         <outlet property="titleViewHolder" destination="e1N-4F-coZ" id="8eL-hI-pCD"/>
+                        <outlet property="viewHolder" destination="gTA-tn-aOe" id="0fN-i3-KUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,10 +132,27 @@
                                             <action selector="handleDismissView" destination="kzb-Xk-udy" eventType="touchUpInside" id="ZJr-P9-HUp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-hb-KGb">
+                                        <rect key="frame" x="324" y="2" width="90" height="36"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="YoA-7w-KY2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="amc-og-iDD"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-12" maxY="0.0"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleEditAction" destination="kzb-Xk-udy" eventType="touchUpInside" id="Sfb-ge-BQL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="80j-2g-40j" firstAttribute="centerX" secondItem="kzb-Xk-udy" secondAttribute="centerX" id="0LD-NI-1NS"/>
+                                    <constraint firstAttribute="trailing" secondItem="HnB-hb-KGb" secondAttribute="trailing" id="39e-j2-McN"/>
+                                    <constraint firstItem="HnB-hb-KGb" firstAttribute="centerY" secondItem="80j-2g-40j" secondAttribute="centerY" constant="-2" id="3CA-H6-Zj8"/>
                                     <constraint firstAttribute="height" constant="44" id="8co-rp-zgD"/>
                                     <constraint firstItem="80j-2g-40j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="20x-ir-tHA" secondAttribute="trailing" constant="12" id="Aro-cR-tm6"/>
                                     <constraint firstItem="80j-2g-40j" firstAttribute="centerY" secondItem="kzb-Xk-udy" secondAttribute="centerY" id="B5F-u7-WIX"/>
@@ -145,21 +160,23 @@
                                     <constraint firstItem="80j-2g-40j" firstAttribute="centerX" secondItem="kzb-Xk-udy" secondAttribute="centerX" id="LCd-8e-e0h"/>
                                     <constraint firstItem="20x-ir-tHA" firstAttribute="leading" secondItem="kzb-Xk-udy" secondAttribute="leading" id="Ne3-5r-FcJ"/>
                                     <constraint firstAttribute="bottom" secondItem="20x-ir-tHA" secondAttribute="bottom" id="YMM-eD-4Oo"/>
+                                    <constraint firstItem="HnB-hb-KGb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="80j-2g-40j" secondAttribute="trailing" constant="12" id="bXQ-5Q-xyD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dismissButton" destination="20x-ir-tHA" id="11R-K0-i4J"/>
+                                    <outlet property="editButton" destination="HnB-hb-KGb" id="ZgA-uz-MbL"/>
                                     <outlet property="titleLabel" destination="80j-2g-40j" id="sXc-oq-LNY"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-Bl-quJ" userLabel="tableViewHolder" customClass="AddTaskView" customModule="RemindMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-Bl-quJ" userLabel="tableViewHolder" customClass="ViewHolder" customModule="RemindMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mls-9z-CHX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="N4A-Bl-quJ" id="dri-1b-yb0"/>
-                                            <outlet property="delegate" destination="N4A-Bl-quJ" id="VHz-ki-Ye9"/>
+                                            <outlet property="dataSource" destination="e5I-SA-sBZ" id="n7I-6h-Xop"/>
+                                            <outlet property="delegate" destination="e5I-SA-sBZ" id="X2e-QP-5dU"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -170,9 +187,6 @@
                                     <constraint firstAttribute="trailing" secondItem="mls-9z-CHX" secondAttribute="trailing" id="nOo-a5-f0E"/>
                                     <constraint firstItem="mls-9z-CHX" firstAttribute="top" secondItem="N4A-Bl-quJ" secondAttribute="top" id="nvI-Ql-bg3"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="tableView" destination="mls-9z-CHX" id="5K6-eh-CF8"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -188,8 +202,9 @@
                         <viewLayoutGuide key="safeArea" id="hNv-uI-7Sx"/>
                     </view>
                     <connections>
-                        <outlet property="addTaskView" destination="N4A-Bl-quJ" id="hx0-Sf-sy3"/>
+                        <outlet property="tableView" destination="mls-9z-CHX" id="SlO-Uk-fzW"/>
                         <outlet property="titleViewHolder" destination="kzb-Xk-udy" id="VzS-09-sV9"/>
+                        <outlet property="viewHolder" destination="N4A-Bl-quJ" id="ZzS-1P-vM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulh-PC-gsN" sceneMemberID="firstResponder"/>
@@ -262,7 +277,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eeB-VX-l20" firstAttribute="leading" secondItem="h2t-3e-5yb" secondAttribute="leading" constant="12" id="3TK-37-oQk"/>
                                     <constraint firstItem="TJd-Xz-Qtm" firstAttribute="top" secondItem="h2t-3e-5yb" secondAttribute="top" id="5bj-eE-LxC"/>

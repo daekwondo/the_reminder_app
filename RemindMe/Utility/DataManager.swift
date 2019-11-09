@@ -14,13 +14,86 @@ class DataManager: NSObject {
     static let sharedInstance = DataManager()
     
     // MARK: - Save Tasks
-    class func save(task:Tasks, handler:(Bool)->Void) {
+    class func save(_ task:Tasks, saveHandler:(()->Void)? = nil) {
+        let context = fetchContext();
+        let entityReminder = NSEntityDescription.entity(forEntityName: Entity.Reminders, in: context)
+        let reminder = NSManagedObject(entity: entityReminder!, insertInto: context)
+        let objectId = reminder.objectID.uriRepresentation().absoluteString
+        reminder.setValue(task.name, forKey: Constants.Name)
+        reminder.setValue(task.category.stringValue(), forKey: Constants.Category)
+        reminder.setValue(task.interval.toString(checkPlural: false), forKey: Constants.Interval)
+        reminder.setValue(task.repeats, forKey: Constants.Repeats)
+        reminder.setValue(task.startDate.toString(), forKey: Constants.StartDate)
+        reminder.setValue(objectId, forKey: Constants.TaskId)
+        task.taskId = objectId
+        print(objectId)
+        saveContext()
         
+        if let handler =  saveHandler {
+            handler()
+        }
     }
     
     // MARK: - Load Tasks
-    class func loadTasks(forType type:TaskType, handler:([Tasks])->Void) {
+    class func loadTasks(forType type:ReminderType? = nil, loadHandler:(([Tasks])->Void)? = nil) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Reminders)
         
+        if let category = type {
+            request.predicate = NSPredicate(format: "%@ = %@", Constants.Category,category.stringValue())
+        }
+        
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let context = fetchContext();
+            let reminders = try context.fetch(request) as! [NSManagedObject]
+            
+            var tasks = [Tasks]()
+            for reminder in reminders {
+                let task = format(reminder)
+                tasks.append(task)
+            }
+        
+            if let handler =  loadHandler {
+                handler(tasks)
+            }
+            
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    class func delete(_ task:Tasks) {
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: Entity.Reminders)
+        fetchRequest.predicate = NSPredicate(format: "taskId ==[c] %@",task.taskId)
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        let context = fetchContext()
+        do {
+            try context.execute(batchDeleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
+    }
+    
+    class private func format(_ reminder:NSManagedObject) -> Tasks {
+        let name = reminder.value(forKey: Constants.Name) as! String
+        let category = reminder.value(forKey: Constants.Category) as!String
+        let interval = reminder.value(forKey: Constants.Interval) as!String
+        let repeats = reminder.value(forKey: Constants.Repeats) as! Bool
+        let startDate = reminder.value(forKey: Constants.StartDate) as!String
+        let taskId = reminder.value(forKey: Constants.TaskId) as!String
+        
+        let intervals = interval.components(separatedBy: " ")
+        let reminderInterval = ReminderInterval(value: intervals[0], unit: Unit.convertToEnum(intervals[1]))
+        
+        let task = Tasks(name: name, startDate: startDate.toDate(), category: ReminderType.convertToEnum(category), repeats: repeats, interval: reminderInterval)
+        task.taskId = taskId
+        
+        print(taskId)
+        return task
     }
     
     // MARK: - Core Data stack
@@ -53,12 +126,12 @@ class DataManager: NSObject {
 
     // MARK: - Core Data Saving support
     
-    static func fetchContext() -> NSPersistentContainer {
-        return DataManager.sharedInstance.persistentContainer;
+    static func fetchContext() -> NSManagedObjectContext {
+        return DataManager.sharedInstance.persistentContainer.viewContext;
     }
-
+    
     class func saveContext () {
-        let context = fetchContext().viewContext
+        let context = fetchContext()
         if context.hasChanges {
             do {
                 try context.save()

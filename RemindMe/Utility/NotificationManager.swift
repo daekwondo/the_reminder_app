@@ -3,7 +3,7 @@
 //  RemindMe
 //
 //  Created by Ishwar Silwal on 10/10/19.
-//  Copyright © 2019 Santosh Bista. All rights reserved.
+//  Copyright © 2019 Ishwar Silwal. All rights reserved.
 //
 
 import UIKit
@@ -48,34 +48,40 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    func scheduleNotification(notificationType: String) {
+    func scheduleNotification(forTask task:Tasks) {
         
-        let content = UNMutableNotificationContent()
-        let categoryIdentifier = "Delete Notification Type"
+//        let content = UNMutableNotificationContent()
+//        let categoryIdentifier = "RemindMeTasks"
+//
+//        content.title = task.category.stringValue()
+//        content.body = task.name
+//        content.sound = UNNotificationSound.default
+//        content.badge = 1
+//        content.categoryIdentifier = categoryIdentifier
+//
+//        let interval = task.interval.caluclateInterval()
+//
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: task.startDate, repeats: <#T##Bool#>)
+//        let identifier = "Local Notification"
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//
+//        notificationCenter.add(request) { (error) in
+//            if let error = error {
+//                print("Error \(error.localizedDescription)")
+//            }
+//        }
+//
+//        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+//        let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
+//        let category = UNNotificationCategory(identifier: categoryIdentifier,
+//                                              actions: [snoozeAction, deleteAction],
+//                                              intentIdentifiers: [],
+//                                              options: [])
+//
+//        notificationCenter.setNotificationCategories([category])
+    }
+    
+    func deleteNotification(forTask task:Tasks) {
         
-        content.title = "This is title"
-        content.body = "This is reminder detail"
-        content.sound = UNNotificationSound.default
-        content.badge = 1
-        content.categoryIdentifier = categoryIdentifier
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let identifier = "Local Notification"
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        notificationCenter.add(request) { (error) in
-            if let error = error {
-                print("Error \(error.localizedDescription)")
-            }
-        }
-        
-        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-        let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
-        let category = UNNotificationCategory(identifier: categoryIdentifier,
-                                              actions: [snoozeAction, deleteAction],
-                                              intentIdentifiers: [],
-                                              options: [])
-        
-        notificationCenter.setNotificationCategories([category])
     }
 }

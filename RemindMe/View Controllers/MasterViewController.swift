@@ -10,22 +10,15 @@ import UIKit
 
 class MasterViewController: UIViewController {
     
+    @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var titleViewHolder:TitleView!
+    @IBOutlet weak var viewHolder:ViewHolder!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.disableDarkMode()
         view.backgroundColor = FontColor.backGroundColor
+        viewHolder.addDummyView(tableView)
+        self.tableView.keyboardDismissMode = .onDrag
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

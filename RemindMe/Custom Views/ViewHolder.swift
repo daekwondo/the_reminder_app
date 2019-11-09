@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ListView: UIView {
-    
-    @IBOutlet weak var tableView:UITableView!
+class ViewHolder: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addDummyView()
     }
     
     override func layoutSubviews() {
@@ -22,11 +19,11 @@ class ListView: UIView {
         configureViewHolder()
     }
     
-    private func addDummyView() {
+    func addDummyView(_ subView:UIView) {
         let screenSize = UIScreen.main.bounds.size;
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: -screenSize.height))
         view.backgroundColor = FontColor.backGroundColor
-        tableView.addSubview(view)
+        subView.addSubview(view)
     }
     
     private func configureViewHolder() {

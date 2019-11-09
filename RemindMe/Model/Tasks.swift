@@ -8,32 +8,30 @@
 
 import UIKit
 
-enum TaskType: String {
-    case general = "general"
-    case birthday = "birthday"
-    case health = "health"
-    case anniversay = "anniversay"
-    case unknown = "unknown"
-}
+ 
 
 class Tasks: NSObject {
     
-    let name:String
-    let endDate:Date
-    let category:TaskType
-    let repeats:Bool
-    let interval:TimeInterval
-    let taskId:String?
+    var name:String
+    var startDate:Date
+    var category:ReminderType
+    var repeats:Bool
+    var interval:ReminderInterval
+    var taskId:String = "-1";
     
-    init(name:String, endDate:Date, category:TaskType = .general, repeats:Bool = false, interval:TimeInterval) {
+    init(name:String, startDate:Date, category:ReminderType, repeats:Bool, interval:ReminderInterval) {
         
         self.name = name
-        self.endDate = endDate
+        self.startDate = startDate
         self.category = category
         self.repeats = repeats
         self.interval = interval
-        self.taskId = nil
         
         super.init();
+    }
+    
+    convenience override init() {
+        let rem = ReminderInterval(value: "8", unit: Unit.Hour);
+        self.init(name: Constants.EmptyString, startDate: Date(), category: .General, repeats: false, interval: rem);
     }
 }

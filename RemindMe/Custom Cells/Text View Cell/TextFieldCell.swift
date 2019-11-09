@@ -12,6 +12,7 @@ class TextFieldCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var nameField:UITextField!
+    @IBOutlet weak var contentViewHolder:UIView!
     
     var updateText:((_ text:String)->Void)?
 
@@ -21,8 +22,12 @@ class TextFieldCell: UITableViewCell {
         
         contentView.clipsToBounds = true
         
-        titleLabel.configureWith(fontName: FontName.OpenSansRegular, fontSize: FontSize.Fourteen, fontColor: FontColor.black)
-        nameField.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Fourteen, fontColor: FontColor.grayColor)
+        contentViewHolder.backgroundColor = FontColor.borderColor;
+        contentViewHolder.clipsToBounds = true;
+        contentViewHolder.showBorder(width: RadiusSize.Zero, color: FontColor.clear, cornerRadius: RadiusSize.Five);
+        
+        titleLabel.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Twelve, fontColor: FontColor.darkBlue)
+        nameField.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Fourteen, fontColor: FontColor.black)
     }
 }
 

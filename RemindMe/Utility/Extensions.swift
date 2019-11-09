@@ -105,6 +105,10 @@ extension UIView {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
     }
+    
+    func loadXib(_ name:String) -> UIView {
+        return UINib.init(nibName: name, bundle: nil).instantiate(withOwner: nil, options: nil).first as! UIView
+    }
 }
 
 extension UIImageView {
@@ -151,16 +155,26 @@ extension UILabel {
     }
 }
 
+extension Date {
+    
+   func toString() -> String {
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateStyle = .medium
+       dateFormatter.timeStyle = .short
+       return dateFormatter.string(from:self)
+   }
+}
+
 extension String {
     
-    func formatDateString(_ format:String) -> String {
+    func toDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let date = formatter.date(from: self)!
-        
-        formatter.dateFormat = format
-        return formatter.string(from: date)
+        guard let date = dateFormatter.date(from:self) else {
+            return Date()
+        }
+        return  date
     }
     
     func lowerCasedFirstLetter() -> String {

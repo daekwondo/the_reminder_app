@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyTaskCell" rowHeight="442" id="KGk-i7-Jjw" customClass="EmptyTaskCell" customModule="RemindMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdi-v8-SH7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bmb-hL-zR2">
+                                <rect key="frame" x="67" y="100.5" width="186.5" height="241"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notask" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-Gy-l2I">
+                                        <rect key="frame" x="33" y="0.0" width="120" height="120"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-Iq-icE">
+                                        <rect key="frame" x="0.0" y="136" width="186.5" height="105"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No tasks found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdQ-lc-plE">
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmu-wg-UIS">
+                                                <rect key="frame" x="33" y="65" width="120" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="H3d-xW-FMy"/>
+                                                    <constraint firstAttribute="height" constant="40" id="PD6-xN-MfG"/>
+                                                </constraints>
+                                                <state key="normal" title="Add Task"/>
+                                                <connections>
+                                                    <action selector="handleAddTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IIH-mR-vFA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bmb-hL-zR2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sdi-v8-SH7" secondAttribute="top" constant="36" id="4GV-D2-jwB"/>
+                            <constraint firstItem="Bmb-hL-zR2" firstAttribute="centerY" secondItem="sdi-v8-SH7" secondAttribute="centerY" id="5Xz-yt-zoI"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bmb-hL-zR2" secondAttribute="bottom" constant="36" id="PGd-NX-uSy"/>
+                            <constraint firstItem="Bmb-hL-zR2" firstAttribute="centerX" secondItem="sdi-v8-SH7" secondAttribute="centerX" id="zJy-oL-ojD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="sdi-v8-SH7" secondAttribute="trailing" id="SxA-e9-cUP"/>
+                    <constraint firstItem="sdi-v8-SH7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="T7U-dI-pDm"/>
+                    <constraint firstItem="sdi-v8-SH7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eRS-uY-RRK"/>
+                    <constraint firstAttribute="bottom" secondItem="sdi-v8-SH7" secondAttribute="bottom" id="nTh-qz-Xwo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addButton" destination="Lmu-wg-UIS" id="NOy-kV-IVT"/>
+                <outlet property="contentViewHolder" destination="sdi-v8-SH7" id="ecS-0d-wZc"/>
+                <outlet property="emptyImageView" destination="hT1-Gy-l2I" id="xoo-nh-eVK"/>
+                <outlet property="emptyLabel" destination="mdQ-lc-plE" id="Mqo-nL-c9Y"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="notask" width="120" height="120"/>
+    </resources>
+</document>

@@ -12,12 +12,17 @@ class TextLabelCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var detailLabel:UILabel!
+    @IBOutlet weak var contentViewHolder:UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.configureWith(fontName: FontName.OpenSansRegular, fontSize: FontSize.Fourteen, fontColor: FontColor.black)
-        detailLabel.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Fourteen, fontColor: FontColor.grayColor)
+        contentViewHolder.backgroundColor = FontColor.borderColor;
+        contentViewHolder.clipsToBounds = true;
+        contentViewHolder.showBorder(width: RadiusSize.Zero, color: FontColor.clear, cornerRadius: RadiusSize.Five);
+        
+        titleLabel.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Twelve, fontColor: FontColor.darkBlue)
+        detailLabel.configureWith(fontName: FontName.OpenSansSemiBold, fontSize: FontSize.Fourteen, fontColor: FontColor.black)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

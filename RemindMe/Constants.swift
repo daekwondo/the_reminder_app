@@ -43,16 +43,19 @@ struct FontColor {
     static let lightGrayColor   = UIColor(hex: "#D3D3D3")
     static let grayColor        = UIColor.gray
     static let black            = UIColor(hex: "#000000")
+    static let borderColor      = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.05)
 }
 
 struct ImageName {
     static let Add = "add"
     static let Back = "back"
+    static let Edit = "edit"
+    static let Delete = "delete"
 }
 
 struct Duration {
-    static let Thirty:TimeInterval = 30
-    static let Sixty:TimeInterval = 60
+    static let Thirty:TimeInterval = 0.30
+    static let Sixty:TimeInterval = 0.60
 }
 
 
@@ -71,6 +74,7 @@ struct CellIdentifier {
     static let EmptyTaskCell = "EmptyTaskCell"
     static let TextFieldCell = "TextFieldCell"
     static let TextLabelCell = "TextLabelCell"
+    static let ButtonCell = "ButtonCell"
 }
 
 struct Entity {
@@ -79,26 +83,41 @@ struct Entity {
 
 struct Constants {
     static let AddTask = "Add Task"
-    static let EnterReminderTitle = "Enter Reminder Title"
-    static let ReminderTitle = "Reminder Title"
+    static let ReminderTitle = "Title"
+    static let AddReminder = "Add Reminder"
     
-    static let EnterReminderType = "Choose Reminder Category"
     static let ReminderType = "Reminder Category"
     
     static let RepeatReminder = "Repeat Reminder"
     
-    static let EnterReminderEndDate = "Choose Reminder End Date"
-    static let ReminderEndDate = "Reminder End Date"
+    static let ReminderStartDate = "Start Date"
     
-    static let EnterReminderInterval = "Enter Reminder Interval"
-    static let ReminderInterval = "Reminder Interval"
+    static let Yearly = "Yearly"
+    
+    static let ReminderInterval = "Interval"
     
     static let RemindMe = "Remind Me"
-    static let AddReminder = "Add Reminder"
     static let EmptyString = ""
     
     static let Done = "DONE"
     static let Cancel = "CANCEL"
+    
+    static let YES = "YES"
+    static let NO = "NO"
+    
+    static let CreateReminder = "Create Reminder"
+    static let UpdateReminder = "Update Reminder"
+    
+    static let Edit = "Edit"
+    static let Delete = "Delete"
+    
+    static let Name = "name"
+    static let Category = "category"
+    static let Interval = "interval"
+    static let Repeats = "repeats"
+    static let StartDate = "startDate"
+    static let TaskId = "taskId"
+    
 }
 
 

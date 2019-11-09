@@ -9,13 +9,15 @@
 import UIKit
 
 class CategorySection: UIView {
+    
+    @IBOutlet weak var categoryLabel:UILabel!
+    @IBOutlet weak var categoryImage:UIImageView!
+    @IBOutlet weak var contentViewHolder:UIView!
+    @IBOutlet weak var separatorView:UIView!
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
     }
-    */
 
 }
