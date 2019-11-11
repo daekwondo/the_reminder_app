@@ -159,8 +159,7 @@ extension Date {
     
    func toString() -> String {
        let dateFormatter = DateFormatter()
-       dateFormatter.dateStyle = .medium
-       dateFormatter.timeStyle = .short
+       dateFormatter.dateFormat = "MMM dd yyyy HH:mm"
        return dateFormatter.string(from:self)
    }
 }
@@ -169,7 +168,7 @@ extension String {
     
     func toDate() -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "MMM dd yyyy HH:mm"
         
         guard let date = dateFormatter.date(from:self) else {
             return Date()
