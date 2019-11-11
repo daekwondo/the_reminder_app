@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-RemindMe/Pods-RemindMe-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AKSideMenu/AKSideMenu.framework
+${BUILT_PRODUCTS_DIR}/Hue/Hue.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework
+${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
