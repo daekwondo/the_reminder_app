@@ -99,7 +99,7 @@
 		A4026ACD23319C46003DD66E /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		A4026ACF23319CC2003DD66E /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		A433E4C6237392AD00E251FE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		A47A45CE23762C7F00FC6479 /* RemindMe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RemindMe 2.xcdatamodel"; sourceTree = "<group>"; };
+		A47A45CE23762C7F00FC6479 /* RemindMe 2.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = "RemindMe 2.xcdatamodel"; sourceTree = "<group>"; };
 		A47D5A9C234FBC3E00B2AC4F /* EmptyTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskCell.swift; sourceTree = "<group>"; };
 		A47D5A9D234FBC3E00B2AC4F /* EmptyTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTaskCell.xib; sourceTree = "<group>"; };
 		A492340723500944002264F9 /* TextLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabelCell.swift; sourceTree = "<group>"; };
@@ -823,7 +823,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bista.raj.santosh.RemindMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = silwal.ishwar.RemindMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -845,7 +845,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bista.raj.santosh.RemindMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = silwal.ishwar.RemindMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -866,7 +866,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = silwal.ishwar.RemindMeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Silwal.Ishwar.RemindMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -887,7 +887,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = silwal.ishwar.RemindMeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Silwal.Ishwar.RemindMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

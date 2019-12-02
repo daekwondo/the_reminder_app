@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,15 +42,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nL2-5P-V4F" firstAttribute="leading" secondItem="dOE-nv-Meb" secondAttribute="leading" constant="12" id="7V5-zA-ZsQ"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nL2-5P-V4F" secondAttribute="bottom" constant="12" id="Th1-sC-fMK"/>
-                            <constraint firstItem="nL2-5P-V4F" firstAttribute="top" secondItem="dOE-nv-Meb" secondAttribute="top" constant="12" id="wK4-bt-3Rh"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nL2-5P-V4F" secondAttribute="bottom" priority="750" constant="12" id="Th1-sC-fMK"/>
+                            <constraint firstItem="nL2-5P-V4F" firstAttribute="top" secondItem="dOE-nv-Meb" secondAttribute="top" priority="750" constant="12" id="wK4-bt-3Rh"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dOE-nv-Meb" secondAttribute="bottom" id="JYv-MA-ex9"/>
-                    <constraint firstItem="dOE-nv-Meb" firstAttribute="top" secondItem="53E-w7-t7V" secondAttribute="top" constant="12" id="VHT-pI-sFf"/>
+                    <constraint firstItem="dOE-nv-Meb" firstAttribute="top" secondItem="53E-w7-t7V" secondAttribute="top" priority="750" constant="12" id="VHT-pI-sFf"/>
                     <constraint firstItem="dOE-nv-Meb" firstAttribute="leading" secondItem="53E-w7-t7V" secondAttribute="leading" constant="12" id="hDh-WE-GdM"/>
                     <constraint firstAttribute="trailing" secondItem="dOE-nv-Meb" secondAttribute="trailing" constant="12" id="tDF-V1-OnF"/>
                 </constraints>

@@ -213,6 +213,11 @@ extension AddReminderViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == CellType.interval.intValue() {
+            if !task.repeats {
+                return 0
+            }
+        }
         return UITableView.automaticDimension
     }
     

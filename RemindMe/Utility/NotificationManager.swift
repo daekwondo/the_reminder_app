@@ -50,35 +50,37 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
     
     func scheduleNotification(forTask task:Tasks) {
         
-//        let content = UNMutableNotificationContent()
-//        let categoryIdentifier = "RemindMeTasks"
-//
-//        content.title = task.category.stringValue()
-//        content.body = task.name
-//        content.sound = UNNotificationSound.default
-//        content.badge = 1
-//        content.categoryIdentifier = categoryIdentifier
-//
-//        let interval = task.interval.caluclateInterval()
-//
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: task.startDate, repeats: <#T##Bool#>)
-//        let identifier = "Local Notification"
-//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-//
-//        notificationCenter.add(request) { (error) in
-//            if let error = error {
-//                print("Error \(error.localizedDescription)")
-//            }
-//        }
-//
-//        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-//        let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
-//        let category = UNNotificationCategory(identifier: categoryIdentifier,
-//                                              actions: [snoozeAction, deleteAction],
-//                                              intentIdentifiers: [],
-//                                              options: [])
-//
-//        notificationCenter.setNotificationCategories([category])
+        let content = UNMutableNotificationContent()
+        let categoryIdentifier = "RemindMeTasks"
+
+        content.title = task.category.stringValue()
+        content.body = task.name
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        content.categoryIdentifier = categoryIdentifier
+
+        let interval = task.interval.caluclateInterval()
+
+        let dateComponents = Calendar.current.dateComponents(Set(arrayLiteral: Calendar.Component.year, Calendar.Component.month, Calendar.Component.day, Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second), from: task.startDate)
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: task.repeats)
+        let identifier = "Local Notification"
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+
+        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+        let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
+        let category = UNNotificationCategory(identifier: categoryIdentifier,
+                                              actions: [snoozeAction, deleteAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+
+        notificationCenter.setNotificationCategories([category])
     }
     
     func deleteNotification(forTask task:Tasks) {

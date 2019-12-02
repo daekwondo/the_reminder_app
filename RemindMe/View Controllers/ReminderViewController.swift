@@ -142,16 +142,8 @@ class ReminderViewController: MasterViewController {
         let task = getTask(atIndexPath: indexPath)
         
         removeTask(task)
-        
-        if isListEmpty() {
-            tableView.reloadData()
-            handleAddViewVisible()
-        }
-        else {
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
-        }
+        tableView.reloadData()
+        handleAddViewVisible()
     }
     
     private func getTask(atIndexPath indexPath:IndexPath)->Tasks {
@@ -304,6 +296,7 @@ extension ReminderViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         action.image = UIImage(named: ImageName.Delete)
+        action.backgroundColor = FontColor.white
         
         let actions = UISwipeActionsConfiguration(actions: [action])
         actions.performsFirstActionWithFullSwipe = false

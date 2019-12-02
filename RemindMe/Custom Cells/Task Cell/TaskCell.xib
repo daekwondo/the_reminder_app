@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,7 +50,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DbM-o1-7MP" firstAttribute="leading" secondItem="7Rj-ty-54a" secondAttribute="trailing" constant="20" id="2ub-q5-Zx3"/>
-                            <constraint firstItem="2fF-SA-N9d" firstAttribute="top" secondItem="Naz-NP-RHE" secondAttribute="top" constant="12" id="6ql-vM-CJ2"/>
+                            <constraint firstItem="2fF-SA-N9d" firstAttribute="top" secondItem="Naz-NP-RHE" secondAttribute="top" priority="750" constant="12" id="6ql-vM-CJ2"/>
                             <constraint firstItem="7Rj-ty-54a" firstAttribute="top" secondItem="2fF-SA-N9d" secondAttribute="bottom" constant="8" id="IQY-dc-bwV"/>
                             <constraint firstItem="DbM-o1-7MP" firstAttribute="centerY" secondItem="7Rj-ty-54a" secondAttribute="centerY" id="JFo-Ly-HZB"/>
                             <constraint firstItem="PkF-we-ZYM" firstAttribute="leading" secondItem="2fF-SA-N9d" secondAttribute="leading" id="Jdi-hl-rJI"/>
@@ -67,7 +67,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Naz-NP-RHE" secondAttribute="bottom" id="Eg5-sP-fBJ"/>
                     <constraint firstAttribute="trailing" secondItem="Naz-NP-RHE" secondAttribute="trailing" constant="12" id="FDV-7a-Qs9"/>
-                    <constraint firstItem="Naz-NP-RHE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="a3b-Qn-xQn"/>
+                    <constraint firstItem="Naz-NP-RHE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="750" constant="12" id="a3b-Qn-xQn"/>
                     <constraint firstItem="Naz-NP-RHE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="at1-1K-TJL"/>
                 </constraints>
             </tableViewCellContentView>

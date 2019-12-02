@@ -18,7 +18,8 @@ class DataManager: NSObject {
         let context = fetchContext();
         let entityReminder = NSEntityDescription.entity(forEntityName: Entity.Reminders, in: context)
         let reminder = NSManagedObject(entity: entityReminder!, insertInto: context)
-        let objectId = reminder.objectID.uriRepresentation().absoluteString
+        let objectId = fetchId(from: reminder.objectID)
+        
         reminder.setValue(task.name, forKey: Constants.Name)
         reminder.setValue(task.category.stringValue(), forKey: Constants.Category)
         reminder.setValue(task.interval.toString(checkPlural: false), forKey: Constants.Interval)
@@ -76,6 +77,11 @@ class DataManager: NSObject {
         } catch {
             print ("There was an error")
         }
+    }
+    
+    private class func fetchId(from object:NSManagedObjectID) -> String {
+        let objectId = object.uriRepresentation().absoluteString
+        return objectId.replacingOccurrences(of: "x-coredata:///Reminders/", with: "")
     }
     
     class private func format(_ reminder:NSManagedObject) -> Tasks {
